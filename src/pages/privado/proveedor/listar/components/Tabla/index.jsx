@@ -1,7 +1,24 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 import { Fila } from "../Fila";
 import "./tabla.css";
 
-function Tabla() {
+function Tabla(props) {
+  const [proveedores, setProveedor] = useState([]);
+
+  function getProveedor() {
+    axios
+      .get("http://localhost:4000/proveedor")
+      .then((response) => {
+        setProveedor(response.data);
+      })
+      .catch((e) => {});
+  }
+
+  useEffect(() => {
+    getProveedor();
+  }, []);
   return (
     <div className="resultado">
       <table className="table table-striped table-bordered">
@@ -14,7 +31,13 @@ function Tabla() {
           </tr>
         </thead>
         <tbody>
-          <Fila />
+          {proveedores.map((proveedor) => (
+            <Fila
+              codigo={proveedor.codigo}
+              nombre={proveedor.nombre}
+              ruc={proveedor.ruc}
+            />
+          ))}
         </tbody>
       </table>
     </div>

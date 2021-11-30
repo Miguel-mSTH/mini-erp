@@ -1,28 +1,56 @@
 {
-  "alumnos": [
+  "proveedor": [
     {
       "id": 1,
-      "name": "sebastian",
-      "lastname": "yabiku",
-      "age": "34"
+      "codigo": "10001",
+      "nombre": "sebastian",
+      "ruc": "20211213",
+      "direccion": "La Molina"
     },
     {
-      "name": "angel",
-      "lastname": "farfan",
-      "age": "23",
-      "id": 2
+      "id": 2,
+      "codigo": "10002",
+      "nombre": "anderson",
+      "ruc": "20211415",
+      "direccion": "La Molina"
     },
     {
-      "name": "LUIS",
-      "lastname": "farfan",
-      "age": "23",
-      "id": 3
+      "id": 3,
+      "codigo": "10003",
+      "nombre": "yabiku",
+      "ruc": "20211617",
+      "direccion": "La Molina"
     },
     {
-      "name": "LUIS",
-      "lastname": "farfan",
-      "age": "23",
+      "codigo": "10004",
+      "nombre": "miguel",
+      "ruc": "20211920",
+      "direccion": "La Molina",
       "id": 4
+    },
+    {
+      "codigo": "10005",
+      "nombre": "Pablo",
+      "ruc": "20212122",
+      "direccion": "Lima",
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "codigo": "10006",
+      "nombre": "Julian",
+      "ruc": "20212422",
+      "direccion": "La Victoria",
+      "id": 7
+    },
+    {
+      "codigo": "10007",
+      "nombre": "Deysi",
+      "ruc": "20212526",
+      "direccion": "Ayacucho",
+      "id": 8
     }
   ],
   "profesores": [

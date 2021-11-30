@@ -2,14 +2,14 @@ import { Ver } from "../Ver";
 import { Editar } from "../Editar";
 import "./fila.css";
 
-function Fila() {
+function Fila(props) {
+  const { codigo, nombre, ruc } = props;
+
   return (
     <tr className="registro">
-      <th>1</th>
-
-      <td>Ruben Cardens</td>
-
-      <td>20605571710</td>
+      <th>{codigo}</th>
+      <td>{nombre}</td>
+      <td>{ruc}</td>
       <td>
         <Ver />
       </td>
