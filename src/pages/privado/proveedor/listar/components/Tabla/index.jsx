@@ -36,6 +36,7 @@ function Tabla(props) {
               codigo={proveedor.codigo}
               nombre={proveedor.nombre}
               ruc={proveedor.ruc}
+              id={proveedor.id}
             />
           ))}
         </tbody>

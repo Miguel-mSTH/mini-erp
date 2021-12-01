@@ -2,9 +2,12 @@
   "proveedor": [
     {
       "id": 1,
-      "codigo": "10001",
-      "nombre": "sebastian",
+      "codigo": "100011212",
+      "nombre": "MutecPeru",
       "ruc": "20211213",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "La Molina",
       "direccion": "La Molina"
     },
     {
@@ -12,6 +15,9 @@
       "codigo": "10002",
       "nombre": "anderson",
       "ruc": "20211415",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "La Molina",
       "direccion": "La Molina"
     },
     {
@@ -19,12 +25,18 @@
       "codigo": "10003",
       "nombre": "yabiku",
       "ruc": "20211617",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "La Molina",
       "direccion": "La Molina"
     },
     {
       "codigo": "10004",
       "nombre": "miguel",
       "ruc": "20211920",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "La Molina",
       "direccion": "La Molina",
       "id": 4
     },
@@ -32,25 +44,51 @@
       "codigo": "10005",
       "nombre": "Pablo",
       "ruc": "20212122",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "La Molina",
       "direccion": "Lima",
       "id": 5
-    },
-    {
-      "id": 6
     },
     {
       "codigo": "10006",
       "nombre": "Julian",
       "ruc": "20212422",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "La Molina",
       "direccion": "La Victoria",
-      "id": 7
+      "id": 6
     },
     {
       "codigo": "10007",
       "nombre": "Deysi",
       "ruc": "20212526",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "La Molina",
       "direccion": "Ayacucho",
+      "id": 7
+    },
+    {
+      "codigo": "10008",
+      "nombre": "Intcomex",
+      "ruc": "20213132",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Lima",
+      "direccion": "La Molina",
       "id": 8
+    },
+    {
+      "codigo": "10009",
+      "nombre": "MutecPeru",
+      "ruc": "20555901250",
+      "departamento": "Ayacucho",
+      "provincia": "Ayacucho",
+      "distrito": "Ayacucho",
+      "direccion": "Av. Petit Thouars 3651 San Isidro",
+      "id": 9
     }
   ],
   "profesores": [

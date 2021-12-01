@@ -3,7 +3,7 @@ import { Editar } from "../Editar";
 import "./fila.css";
 
 function Fila(props) {
-  const { codigo, nombre, ruc } = props;
+  const { codigo, nombre, ruc, id } = props;
 
   return (
     <tr className="registro">
@@ -11,10 +11,10 @@ function Fila(props) {
       <td>{nombre}</td>
       <td>{ruc}</td>
       <td>
-        <Ver />
+        <Ver id={id} />
       </td>
       <td>
-        <Editar />
+        <Editar id={id} />
       </td>
     </tr>
   );

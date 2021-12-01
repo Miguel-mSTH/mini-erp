@@ -5,10 +5,58 @@ import { Lista } from "../conponents/Lista";
 import "./nuevo.css";
 
 function PageProvNuevo() {
+  const departamentos = [
+    {
+      title: "Lima",
+      value: "lim",
+    },
+    {
+      title: "Ayacucho",
+      value: "ayac",
+    },
+    {
+      title: "Cuzco",
+      value: "cus",
+    },
+  ];
+
+  const provincias = [
+    {
+      title: "Lima",
+      value: "lim",
+    },
+    {
+      title: "Ayacucho",
+      value: "ayac",
+    },
+    {
+      title: "Cuzco",
+      value: "cus",
+    },
+  ];
+
+  const distritos = [
+    {
+      title: "Lima",
+      value: "lim",
+    },
+    {
+      title: "Ayacucho",
+      value: "ayac",
+    },
+    {
+      title: "Cuzco",
+      value: "cus",
+    },
+  ];
+
   const [form, setForm] = useState({
     codigo: "",
     nombre: "",
     ruc: "",
+    departamento: "",
+    provincia: "",
+    distrito: "",
     direccion: "",
   });
 
@@ -92,23 +140,60 @@ function PageProvNuevo() {
             Ubigeo
           </label>
           <div class="d-flex justify-content-between">
-            <select class="form-select" aria-label="Default select example">
+            <select
+              required
+              class="form-select"
+              aria-label="Default select example"
+              value={form.departamento}
+              onChange={(e) => {
+                setForm((state) => {
+                  return {
+                    ...state,
+                    departamento: e.target.value,
+                  };
+                });
+              }}
+            >
               <option selected>Departamento</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              {departamentos.map((departamento) => (
+                <option>{departamento.title}</option>
+              ))}
             </select>
-            <select class="form-select" aria-label="Default select example">
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              value={form.provincia}
+              onChange={(e) => {
+                setForm((state) => {
+                  return {
+                    ...state,
+                    provincia: e.target.value,
+                  };
+                });
+              }}
+            >
               <option selected>Provincia</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              {provincias.map((provincia) => (
+                <option>{provincia.title}</option>
+              ))}
             </select>
-            <select class="form-select" aria-label="Default select example">
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              value={form.distrito}
+              onChange={(e) => {
+                setForm((state) => {
+                  return {
+                    ...state,
+                    distrito: e.target.value,
+                  };
+                });
+              }}
+            >
               <option selected>Distrito</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              {distritos.map((distrito) => (
+                <option>{distrito.title}</option>
+              ))}
             </select>
           </div>
         </div>
@@ -127,7 +212,7 @@ function PageProvNuevo() {
           ></textarea>
         </div>
         <div>
-          <button>GUARDAR</button>
+          <button className="btn btn-success">GUARDAR</button>
         </div>
       </form>
     </div>
