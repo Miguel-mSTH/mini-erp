@@ -1,32 +1,12 @@
 {
   "proveedor": [
     {
-      "codigo": "qewq",
-      "nombre": "Microsoft",
-      "ruc": "qwe",
-      "departamento": "",
-      "provincia": "",
-      "distrito": "",
-      "direccion": "weqw",
-      "id": 30
-    },
-    {
       "codigo": "2312",
       "nombre": "12312",
       "ruc": "eqwewq",
-      "departamento": "Lima",
-      "provincia": "Lima",
-      "distrito": "Ayacucho",
-      "direccion": "qwewqeqw",
-      "id": 34
-    },
-    {
-      "codigo": "2312",
-      "nombre": "12312",
-      "ruc": "eqwewq",
-      "departamento": "Lima",
-      "provincia": "Lima",
-      "distrito": "Ayacucho",
+      "departamento": "AYACUCHO",
+      "provincia": "HUAMANGA",
+      "distrito": "AYACUCHO",
       "direccion": "qwewqeqw",
       "id": 35
     },
@@ -119,6 +99,26 @@
       "distrito": "Ayacucho",
       "direccion": "wqeqw",
       "id": 51
+    },
+    {
+      "codigo": "10101010010101",
+      "nombre": "Kiritoadsa",
+      "ruc": "202123123",
+      "departamento": "LIMA",
+      "provincia": "HUAROCHIRI",
+      "distrito": "LAHUAYTAMBO",
+      "direccion": "San Martin",
+      "id": 52
+    },
+    {
+      "codigo": "safa",
+      "nombre": "asfasfas",
+      "ruc": "fasfasf",
+      "departamento": "AYACUCHO",
+      "provincia": "HUAMANGA",
+      "distrito": "AYACUCHO",
+      "direccion": "afasfas",
+      "id": 53
     }
   ],
   "materiales": [
@@ -201,12 +201,18 @@
         {
           "id": 6,
           "nombre": "HUAMANGA",
-          "distritos": ["CARMEN ALTO", "AYACUCHO"]
+          "distritos": [
+            "CARMEN ALTO",
+            "AYACUCHO"
+          ]
         },
         {
           "id": 7,
           "nombre": "LUCANAS",
-          "distritos": ["SAN CRISTOBAL", "LEONCIO PRADO"]
+          "distritos": [
+            "SAN CRISTOBAL",
+            "LEONCIO PRADO"
+          ]
         }
       ]
     }

@@ -10,14 +10,46 @@ import axios from "axios";
 function PageProvEditar() {
   //let history = useHistory();
   const [proveedor, setProveedor] = useState({});
+  const [departamentos, setDepartamento] = useState([]);
+  const [response, setResponse] = useState([]);
+  const [provincias, setProvincia] = useState([]);
+
   let { id } = useParams();
 
-  function getProveedor(id) {
+  function getProveedores(id) {
     api.get(`proveedor/${id}`).then((response) => setProveedor(response.data));
   }
 
+  function getDepartamento() {
+    axios
+      .get("http://localhost:4000/departamentos")
+      .then((response) => {
+        setResponse(response.data);
+      })
+      .catch((e) => {});
+  }
+
   useEffect(() => {
-    getProveedor(id);
+    getDepartamento();
+  }, []);
+
+  useEffect(() => {
+    setDepartamento(
+      response.filter((dep) => {
+        return dep.nombre === proveedor.departamento;
+      })
+    );
+    setProvincia(
+      departamentos[0]
+        ? departamentos[0].provincias.filter(
+            (prov) => prov.nombre === proveedor.provincia
+          )
+        : []
+    );
+  }, [proveedor.departamento, proveedor.provincia, proveedor.distrito]);
+
+  useEffect(() => {
+    getProveedores(id);
   }, []);
 
   function updateProveedor(proveedor) {
@@ -100,59 +132,67 @@ function PageProvEditar() {
             Ubigeo
           </label>
           <div class="d-flex justify-content-between">
-            <select class="form-select" aria-label="Default select example">
-              <option
-                selected
-                onChange={(e) => {
-                  setProveedor((state) => {
-                    return {
-                      ...state,
-                      departamento: e.target.value,
-                    };
-                  });
-                }}
-              >
-                {proveedor.departamento}
-              </option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+            <select
+              required
+              className="form-select"
+              aria-label="Default select example"
+              value={proveedor.departamento}
+              onChange={(e) => {
+                setProveedor((state) => {
+                  return {
+                    ...state,
+                    departamento: e.target.value,
+                  };
+                });
+              }}
+            >
+              <option selected>{proveedor.departamento}</option>
+              {response.map((departamento) => {
+                return (
+                  <option key={departamento.id}>{departamento.nombre}</option>
+                );
+              })}
             </select>
-            <select class="form-select" aria-label="Default select example">
-              <option
-                selected
-                onChange={(e) => {
-                  setProveedor((state) => {
-                    return {
-                      ...state,
-                      departamento: e.target.value,
-                    };
-                  });
-                }}
-              >
-                {proveedor.provincia}
-              </option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+            <select
+              className="form-select"
+              aria-label="Default select example"
+              value={proveedor.provincia}
+              onChange={(e) => {
+                setProveedor((state) => {
+                  return {
+                    ...state,
+                    provincia: e.target.value,
+                  };
+                });
+              }}
+            >
+              <option selected>Provincia</option>
+              {!!departamentos.length &&
+                departamentos[0].provincias.map((provincia) => (
+                  <option key={provincia}>{provincia.nombre}</option>
+                ))}
+              {/* {provincias.map((provincia) => (
+                <option>{provincia.title}</option>
+              ))} */}
             </select>
-            <select class="form-select" aria-label="Default select example">
-              <option
-                selected
-                onChange={(e) => {
-                  setProveedor((state) => {
-                    return {
-                      ...state,
-                      departamento: e.target.value,
-                    };
-                  });
-                }}
-              >
-                {proveedor.distrito}
-              </option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+            <select
+              className="form-select"
+              aria-label="Default select example"
+              value={proveedor.distrito}
+              onChange={(e) => {
+                setProveedor((state) => {
+                  return {
+                    ...state,
+                    distrito: e.target.value,
+                  };
+                });
+              }}
+            >
+              <option selected>Distrito</option>
+              {provincias.length &&
+                provincias[0].distritos.map((distrito) => (
+                  <option key={distrito}>{distrito}</option>
+                ))}
             </select>
           </div>
         </div>

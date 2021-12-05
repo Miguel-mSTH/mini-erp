@@ -5,22 +5,8 @@ import { Lista } from "../conponents/Lista";
 import "./nuevo.css";
 
 function PageProvNuevo() {
-  const distritos = [
-    {
-      title: "Lima",
-      value: "lim",
-    },
-    {
-      title: "Ayacucho",
-      value: "ayac",
-    },
-    {
-      title: "Cuzco",
-      value: "cus",
-    },
-  ];
-
   const [departamentos, setDepartamento] = useState([]);
+  const [response, setResponse] = useState([]);
   const [provincias, setProvincia] = useState([]);
   const [form, setForm] = useState({
     codigo: "",
@@ -47,23 +33,29 @@ function PageProvNuevo() {
     axios
       .get("http://localhost:4000/departamentos")
       .then((response) => {
-        setDepartamento(response.data);
-        setProvincia(response.data);
-        //console.log(response.data[0].provincias);
-        //console.log(response.data[0].provincias[1].nombre);
+        setResponse(response.data);
       })
       .catch((e) => {});
   }
 
   useEffect(() => {
     getDepartamento();
+  }, []);
+
+  useEffect(() => {
     setDepartamento(
-      departamentos.filter((dep) => dep.nombre === form.departamento)
+      response.filter((dep) => {
+        return dep.nombre === form.departamento;
+      })
     );
     setProvincia(
-      departamentos.filter((prov) => prov.nombre === form.provincia)
+      departamentos[0]
+        ? departamentos[0].provincias.filter(
+            (prov) => prov.nombre === form.provincia
+          )
+        : []
     );
-  }, [form.departamento, form.provincia]);
+  }, [form.departamento, form.provincia, form.distrito]);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -84,19 +76,19 @@ function PageProvNuevo() {
       <h1>Nuevo Proveedor</h1>
       <hr />
 
-      <div class="mb-4">
+      <div className="mb-4">
         {/* <Guarda /> */}
         <Lista />
       </div>
 
       <form onSubmit={handleSubmit}>
-        <div class="mb-3 col-6">
+        <div className="mb-3 col-6">
           <label for="codigo" class="form-label">
             Codigo
           </label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             id="codigo"
             placeholder="Id"
             required
@@ -112,7 +104,7 @@ function PageProvNuevo() {
           </label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             id="nombreproveedor"
             placeholder="Nombre Proveedor"
             required
@@ -128,7 +120,7 @@ function PageProvNuevo() {
           </label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             id="ruc"
             placeholder="Ruc"
             required
@@ -145,7 +137,7 @@ function PageProvNuevo() {
           <div class="d-flex justify-content-between">
             <select
               required
-              class="form-select"
+              className="form-select"
               aria-label="Default select example"
               value={form.departamento}
               onChange={(e) => {
@@ -158,39 +150,36 @@ function PageProvNuevo() {
               }}
             >
               <option selected>Departamento</option>
-              {departamentos.map((departamento) => {
-                return <option>{departamento.nombre}</option>;
+              {response.map((departamento) => {
+                return (
+                  <option key={departamento.id}>{departamento.nombre}</option>
+                );
               })}
             </select>
             <select
-              class="form-select"
+              className="form-select"
               aria-label="Default select example"
               value={form.provincia}
               onChange={(e) => {
-                // setForm((state) => {
-                //   return {
-                //     ...state,
-                //     provincia: e.target.value,
-                //   };
-                // });
-                setProvincia(
-                  departamentos[0].provincias.filter(
-                    (prov) => prov.nombre === form.provincia
-                  )
-                );
+                setForm((state) => {
+                  return {
+                    ...state,
+                    provincia: e.target.value,
+                  };
+                });
               }}
             >
               <option selected>Provincia</option>
-              {!!provincias.length &&
-                provincias.map((provincia) => (
-                  <option>{provincia.nombre}</option>
+              {!!departamentos.length &&
+                departamentos[0].provincias.map((provincia) => (
+                  <option key={provincia}>{provincia.nombre}</option>
                 ))}
               {/* {provincias.map((provincia) => (
                 <option>{provincia.title}</option>
               ))} */}
             </select>
             <select
-              class="form-select"
+              className="form-select"
               aria-label="Default select example"
               value={form.distrito}
               onChange={(e) => {
@@ -203,14 +192,15 @@ function PageProvNuevo() {
               }}
             >
               <option selected>Distrito</option>
-              {distritos.map((distrito) => (
-                <option>{distrito.title}</option>
-              ))}
+              {provincias.length &&
+                provincias[0].distritos.map((distrito) => (
+                  <option key={distrito}>{distrito}</option>
+                ))}
             </select>
           </div>
         </div>
-        <div class="mb-3 col-6">
-          <label for="direccion" class="form-label">
+        <div className="mb-3 col-6">
+          <label for="direccion" className="form-label">
             Direccion
           </label>
           <textarea
