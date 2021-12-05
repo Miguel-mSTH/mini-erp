@@ -1,5 +1,6 @@
 import { Ver } from "../Ver";
 import { Editar } from "../Editar";
+import { Eliminar } from "../Eliminar";
 import "./fila.css";
 
 function Fila(props) {
@@ -10,11 +11,14 @@ function Fila(props) {
       <th>{codigo}</th>
       <td>{nombre}</td>
       <td>{ruc}</td>
-      <td>
+      <td className="text-center">
         <Ver id={id} />
       </td>
-      <td>
+      <td className="text-center">
         <Editar id={id} />
+      </td>
+      <td className="text-center">
+        <Eliminar id={id} />
       </td>
     </tr>
   );

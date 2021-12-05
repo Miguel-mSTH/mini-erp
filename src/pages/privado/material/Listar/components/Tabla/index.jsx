@@ -1,7 +1,25 @@
+import { useState, useEffect } from "react";
 import { Fila } from "../Fila";
+import axios from "axios";
+
 import "./tabla.css";
 
 function Tabla() {
+  const [materiales, setMaterial] = useState([]);
+
+  function getMaterial() {
+    axios
+      .get("http://localhost:4000/materiales")
+      .then((response) => {
+        setMaterial(response.data);
+      })
+      .catch((e) => {});
+  }
+
+  useEffect(() => {
+    getMaterial();
+  }, []);
+
   return (
     <div className="resultado">
       <table class="table table-striped table-hover table-bordered">
@@ -15,7 +33,15 @@ function Tabla() {
           </tr>
         </thead>
         <tbody>
-          <Fila />
+          {materiales.map((material) => (
+            <Fila
+              codigo={material.codigo}
+              sku={material.sku}
+              nombre={material.nombre}
+              grupo={material.grupo}
+              id={material.id}
+            />
+          ))}
         </tbody>
       </table>
     </div>

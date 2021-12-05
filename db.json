@@ -1,102 +1,214 @@
 {
   "proveedor": [
     {
-      "id": 1,
-      "codigo": "100011212",
-      "nombre": "MutecPeru",
-      "ruc": "20211213",
-      "departamento": "Lima",
-      "provincia": "Lima",
-      "distrito": "La Molina",
-      "direccion": "La Molina"
+      "codigo": "qewq",
+      "nombre": "Microsoft",
+      "ruc": "qwe",
+      "departamento": "",
+      "provincia": "",
+      "distrito": "",
+      "direccion": "weqw",
+      "id": 30
     },
     {
-      "id": 2,
-      "codigo": "10002",
-      "nombre": "anderson",
-      "ruc": "20211415",
+      "codigo": "2312",
+      "nombre": "12312",
+      "ruc": "eqwewq",
       "departamento": "Lima",
       "provincia": "Lima",
-      "distrito": "La Molina",
-      "direccion": "La Molina"
+      "distrito": "Ayacucho",
+      "direccion": "qwewqeqw",
+      "id": 34
     },
     {
-      "id": 3,
-      "codigo": "10003",
-      "nombre": "yabiku",
-      "ruc": "20211617",
+      "codigo": "2312",
+      "nombre": "12312",
+      "ruc": "eqwewq",
       "departamento": "Lima",
       "provincia": "Lima",
-      "distrito": "La Molina",
-      "direccion": "La Molina"
+      "distrito": "Ayacucho",
+      "direccion": "qwewqeqw",
+      "id": 35
     },
     {
-      "codigo": "10004",
-      "nombre": "miguel",
-      "ruc": "20211920",
-      "departamento": "Lima",
-      "provincia": "Lima",
-      "distrito": "La Molina",
-      "direccion": "La Molina",
-      "id": 4
-    },
-    {
-      "codigo": "10005",
-      "nombre": "Pablo",
-      "ruc": "20212122",
-      "departamento": "Lima",
-      "provincia": "Lima",
-      "distrito": "La Molina",
-      "direccion": "Lima",
-      "id": 5
-    },
-    {
-      "codigo": "10006",
-      "nombre": "Julian",
-      "ruc": "20212422",
-      "departamento": "Lima",
-      "provincia": "Lima",
-      "distrito": "La Molina",
-      "direccion": "La Victoria",
-      "id": 6
-    },
-    {
-      "codigo": "10007",
-      "nombre": "Deysi",
-      "ruc": "20212526",
-      "departamento": "Lima",
-      "provincia": "Lima",
-      "distrito": "La Molina",
-      "direccion": "Ayacucho",
-      "id": 7
-    },
-    {
-      "codigo": "10008",
-      "nombre": "Intcomex",
-      "ruc": "20213132",
-      "departamento": "Lima",
-      "provincia": "Lima",
-      "distrito": "Lima",
-      "direccion": "La Molina",
-      "id": 8
-    },
-    {
-      "codigo": "10009",
-      "nombre": "MutecPeru",
-      "ruc": "20555901250",
+      "codigo": "21312",
+      "nombre": "21312",
+      "ruc": "2312",
       "departamento": "Ayacucho",
       "provincia": "Ayacucho",
       "distrito": "Ayacucho",
-      "direccion": "Av. Petit Thouars 3651 San Isidro",
-      "id": 9
+      "direccion": "wdada",
+      "id": 37
+    },
+    {
+      "codigo": "asdsad",
+      "nombre": "asdsa",
+      "ruc": "asdsa",
+      "departamento": "Ayacucho",
+      "provincia": "Ayacucho",
+      "distrito": "Ayacucho",
+      "direccion": "sadsad",
+      "id": 42
+    },
+    {
+      "codigo": "21321",
+      "nombre": "232132",
+      "ruc": "12321",
+      "departamento": "",
+      "provincia": "",
+      "distrito": "",
+      "direccion": "123123",
+      "id": 43
+    },
+    {
+      "codigo": "21321",
+      "nombre": "232132",
+      "ruc": "12321",
+      "departamento": "",
+      "provincia": "",
+      "distrito": "",
+      "direccion": "123123",
+      "id": 44
+    },
+    {
+      "codigo": "21321",
+      "nombre": "asdsad",
+      "ruc": "123213",
+      "departamento": "",
+      "provincia": "",
+      "distrito": "",
+      "direccion": "asdsad",
+      "id": 45
+    },
+    {
+      "codigo": "eqwe",
+      "nombre": "qwewq",
+      "ruc": "qweqw",
+      "departamento": "Lima",
+      "provincia": "Ayacucho",
+      "distrito": "Ayacucho",
+      "direccion": "wqeqw",
+      "id": 48
+    },
+    {
+      "codigo": "eqwe",
+      "nombre": "qwewq",
+      "ruc": "qweqw",
+      "departamento": "Lima",
+      "provincia": "Ayacucho",
+      "distrito": "Ayacucho",
+      "direccion": "wqeqw",
+      "id": 49
+    },
+    {
+      "codigo": "eqwe",
+      "nombre": "qwewq",
+      "ruc": "qweqw",
+      "departamento": "Ayacucho",
+      "provincia": "Ayacucho",
+      "distrito": "Ayacucho",
+      "direccion": "wqeqw",
+      "id": 50
+    },
+    {
+      "codigo": "eqwe",
+      "nombre": "qwewq",
+      "ruc": "qweqw",
+      "departamento": "Lima",
+      "provincia": "Ayacucho",
+      "distrito": "Ayacucho",
+      "direccion": "wqeqw",
+      "id": 51
     }
   ],
-  "profesores": [
+  "materiales": [
     {
       "id": 1,
-      "name": "cantinflas",
-      "lastname": "yabiku",
-      "age": "34"
+      "codigo": 1011,
+      "sku": 1011,
+      "nombre": "laptop",
+      "grupo": "tecnologia"
+    },
+    {
+      "id": 2,
+      "codigo": 1012,
+      "sku": 1012,
+      "nombre": "celular",
+      "grupo": "tecnologia"
+    }
+  ],
+  "departamentos": [
+    {
+      "id": 1,
+      "nombre": "LIMA",
+      "provincias": [
+        {
+          "id": 3,
+          "nombre": "LIMA",
+          "distritos": [
+            "ANCON",
+            "ATE",
+            "BREÑA",
+            "CARABAYLLO",
+            "CHACLACAYO",
+            "CIENEGUILLA",
+            "COMAS",
+            "EL AGUSTINO",
+            "INDEPENDENCIA",
+            "JESUS MARIA",
+            "LA MOLINA",
+            "LA VICTORIA",
+            "LIMA",
+            "LINCE",
+            "LOS OLIVOS",
+            "MAGDALENA DEL MAR",
+            "MIRAFLORES",
+            "PUEBLO LIBRE",
+            "PUENTE PIEDRA",
+            "RIMAC",
+            "SAN BORJA",
+            "SAN ISIDRO",
+            "SAN LUIS",
+            "SAN JUAN DE LURIGANCHO",
+            "SAN MARTIN DE PORRES",
+            "SAN MIGUEL",
+            "SANTA ANITA",
+            "SANTA ROSA",
+            "SURQUILLO"
+          ]
+        },
+        {
+          "id": 4,
+          "nombre": "HUAROCHIRI",
+          "distritos": [
+            "ANTIOQUIA",
+            "CALLAHUANCA",
+            "CARAMPOMA",
+            "CHICLA",
+            "CUENCA",
+            "HUACHUPAMPA",
+            "HUANZA",
+            "HUAROCHIRI",
+            "LAHUAYTAMBO"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "nombre": "AYACUCHO",
+      "provincias": [
+        {
+          "id": 6,
+          "nombre": "HUAMANGA",
+          "distritos": ["CARMEN ALTO", "AYACUCHO"]
+        },
+        {
+          "id": 7,
+          "nombre": "LUCANAS",
+          "distritos": ["SAN CRISTOBAL", "LEONCIO PRADO"]
+        }
+      ]
     }
   ]
 }

@@ -3,9 +3,6 @@ import "./busca.css";
 function Busca() {
   return (
     <div className="busca">
-      <label for="basic-url" class="form-label">
-        Material
-      </label>
       <div className="input-group mb-3 col-3">
         <form className="d-flex">
           <input

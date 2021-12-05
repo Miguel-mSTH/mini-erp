@@ -5,8 +5,10 @@ import { api } from "../../../../services/api";
 import { useEffect, useState } from "react/cjs/react.development";
 import { useParams } from "react-router";
 import axios from "axios";
+//import { useHistory } from "react-router-dom";
 
 function PageProvEditar() {
+  //let history = useHistory();
   const [proveedor, setProveedor] = useState({});
   let { id } = useParams();
 
@@ -22,7 +24,8 @@ function PageProvEditar() {
     axios
       .put(`http://localhost:4000/proveedor/${id}`, proveedor)
       .then((response) => {
-        alert("El proveedor se guardo correctamente");
+        alert("El proveedor se actualizo correctamente");
+        //history.goBack();
       })
       .catch(() => {
         alert("Por favor intentalo nuevamente");
@@ -33,6 +36,10 @@ function PageProvEditar() {
     e.preventDefault();
     updateProveedor(proveedor);
   }
+
+  // useEffect(() => {
+  //   updateProveedor();
+  // }, []);
 
   return (
     <div className="editar">

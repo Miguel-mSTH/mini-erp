@@ -27,12 +27,13 @@ function Tabla(props) {
             <th>#</th>
             <th>Proveedor</th>
             <th>Ruc</th>
-            <th colspan="2"></th>
+            <th colspan="3"></th>
           </tr>
         </thead>
         <tbody>
           {proveedores.map((proveedor) => (
             <Fila
+              key={proveedor.id}
               codigo={proveedor.codigo}
               nombre={proveedor.nombre}
               ruc={proveedor.ruc}

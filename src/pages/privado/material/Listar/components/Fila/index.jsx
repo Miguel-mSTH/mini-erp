@@ -2,13 +2,14 @@ import { Ver } from "../Ver";
 import { Editar } from "../Editar";
 import "./fila.css";
 
-function Fila() {
+function Fila(props) {
+  const { codigo, sku, nombre, grupo, id } = props;
   return (
     <tr className="fila">
-      <th scope="row">1</th>
-      <td>Mouse</td>
-      <td>Tecnologia</td>
-      <td>0000000001</td>
+      <th scope="row">{id}</th>
+      <td>{nombre}</td>
+      <td>{grupo}</td>
+      <td>{sku}</td>
       <td>
         <Ver />
       </td>

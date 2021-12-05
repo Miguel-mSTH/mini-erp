@@ -2,7 +2,7 @@ import "./nav.css";
 
 function Nav() {
   return (
-    <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
           Mini ERP
@@ -26,7 +26,7 @@ function Nav() {
                 aria-current="page"
                 href="/privado/material/Listar"
               >
-                Home
+                MATERIALES
               </a>
             </li>
             <li className="nav-item">
@@ -35,8 +35,8 @@ function Nav() {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/privado/proveedor/Nuevo">
-                SD
+              <a className="nav-link" href="/privado/proveedor/Listar">
+                PROVEEDORES
               </a>
             </li>
             <li className="nav-item">
@@ -55,7 +55,7 @@ function Nav() {
               placeholder="Search"
               aria-label="Search"
             />
-            <button className="btn btn-outline-success" type="submit">
+            <button className="btn btn-success" type="submit">
               Search
             </button>
           </form>

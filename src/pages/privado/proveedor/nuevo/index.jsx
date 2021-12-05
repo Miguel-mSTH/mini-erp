@@ -1,40 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 //import { Guarda } from "./components/Guarda";
 import { Lista } from "../conponents/Lista";
 import "./nuevo.css";
 
 function PageProvNuevo() {
-  const departamentos = [
-    {
-      title: "Lima",
-      value: "lim",
-    },
-    {
-      title: "Ayacucho",
-      value: "ayac",
-    },
-    {
-      title: "Cuzco",
-      value: "cus",
-    },
-  ];
-
-  const provincias = [
-    {
-      title: "Lima",
-      value: "lim",
-    },
-    {
-      title: "Ayacucho",
-      value: "ayac",
-    },
-    {
-      title: "Cuzco",
-      value: "cus",
-    },
-  ];
-
   const distritos = [
     {
       title: "Lima",
@@ -50,6 +20,8 @@ function PageProvNuevo() {
     },
   ];
 
+  const [departamentos, setDepartamento] = useState([]);
+  const [provincias, setProvincia] = useState([]);
   const [form, setForm] = useState({
     codigo: "",
     nombre: "",
@@ -71,9 +43,40 @@ function PageProvNuevo() {
       });
   }
 
+  function getDepartamento() {
+    axios
+      .get("http://localhost:4000/departamentos")
+      .then((response) => {
+        setDepartamento(response.data);
+        setProvincia(response.data);
+        //console.log(response.data[0].provincias);
+        //console.log(response.data[0].provincias[1].nombre);
+      })
+      .catch((e) => {});
+  }
+
+  useEffect(() => {
+    getDepartamento();
+    setDepartamento(
+      departamentos.filter((dep) => dep.nombre === form.departamento)
+    );
+    setProvincia(
+      departamentos.filter((prov) => prov.nombre === form.provincia)
+    );
+  }, [form.departamento, form.provincia]);
+
   function handleSubmit(e) {
     e.preventDefault();
     saveProveedor(form);
+    setForm({
+      codigo: "",
+      nombre: "",
+      ruc: "",
+      departamento: "",
+      provincia: "",
+      distrito: "",
+      direccion: "",
+    });
   }
 
   return (
@@ -155,27 +158,36 @@ function PageProvNuevo() {
               }}
             >
               <option selected>Departamento</option>
-              {departamentos.map((departamento) => (
-                <option>{departamento.title}</option>
-              ))}
+              {departamentos.map((departamento) => {
+                return <option>{departamento.nombre}</option>;
+              })}
             </select>
             <select
               class="form-select"
               aria-label="Default select example"
               value={form.provincia}
               onChange={(e) => {
-                setForm((state) => {
-                  return {
-                    ...state,
-                    provincia: e.target.value,
-                  };
-                });
+                // setForm((state) => {
+                //   return {
+                //     ...state,
+                //     provincia: e.target.value,
+                //   };
+                // });
+                setProvincia(
+                  departamentos[0].provincias.filter(
+                    (prov) => prov.nombre === form.provincia
+                  )
+                );
               }}
             >
               <option selected>Provincia</option>
-              {provincias.map((provincia) => (
+              {!!provincias.length &&
+                provincias.map((provincia) => (
+                  <option>{provincia.nombre}</option>
+                ))}
+              {/* {provincias.map((provincia) => (
                 <option>{provincia.title}</option>
-              ))}
+              ))} */}
             </select>
             <select
               class="form-select"

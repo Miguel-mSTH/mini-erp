@@ -88,9 +88,6 @@ function PageProvVer() {
             value={proveedor.direccion}
           ></textarea>
         </div>
-        <div>
-          <button className="btn btn-success">GUARDAR</button>
-        </div>
       </form>
     </div>
   );
